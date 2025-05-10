@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Yönetici Paneli - Dil Seçimi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    select, button { padding: 10px; margin: 10px 0; }
+    .nav a {
+        display: inline-block;
+        margin: 10px 10px 0 0;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="welcome">Yönetici Paneline Hoşgeldiniz</h1>
+
+  <label for="language">Dil Seçin / Dil saýlaň / Выберите язык:</label>
+  <select id="language" onchange="changeLanguage()">
+    <option value="tr">Türkçe</option>
+    <option value="tm">Türkmençe</option>
+    <option value="ru">Русский</option>
+  </select>
+
+  <p id="description">Buradan kullanıcıları ve içerikleri manuel olarak kontrol edebilirsiniz.</p>
+
+  <div class="nav">
+    <a href="https://ser859.github.io/Ulanyjy-dogrula/" id="link1">Cinsiyet Doğrulama Talepleri</a>
+    <a href="https://ser859.github.io/Gonderi-onay/" id="link2">Gönderi Onay Paneli</a>
+    <a href="https://ser859.github.io/Cicek-satin-alma/" id="link3">Çiçek Satın Alma Talepleri</a>
+    <a href="https://ser859.github.io/sikayet-engelleme.html" id="link4">Şikayet ve Engelleme Talepleri</a>
+  </div>
+
+  <script>
+    function changeLanguage() {
+      var lang = document.getElementById("language").value;
+
+      const content = {
+        tr: {
+          welcome: "Yönetici Paneline Hoşgeldiniz",
+          description: "Buradan kullanıcıları ve içerikleri manuel olarak kontrol edebilirsiniz.",
+          link1: "Cinsiyet Doğrulama Talepleri",
+          link2: "Gönderi Onay Paneli",
+          link3: "Çiçek Satın Alma Talepleri",
+          link4: "Şikayet ve Engelleme Talepleri"
+        },
+        tm: {
+          welcome: "Dolandyryjy Paneline Hoş Geldiňiz",
+          description: "Bu ýerden ulanyjylary we mazmunlary el bilen barlap bilersiňiz.",
+          link1: "Jynsy Kesgitleme Talaplary",
+          link2: "Ugratma Tassyklama Paneli",
+          link3: "Gül Satyn Alma Talaplary",
+          link4: "Şikaýat we Gadagan Etme Talaplary"
+        },
+        ru: {
+          welcome: "Добро пожаловать в Панель Администратора",
+          description: "Здесь вы можете вручную проверять пользователей и контент.",
+          link1: "Запросы на Подтверждение Пола",
+          link2: "Панель Подтверждения Публикаций",
+          link3: "Запросы на Покупку Цветов",
+          link4: "Жалобы и Запросы на Блокировку"
+        }
+      };
+
+      document.getElementById("welcome").textContent = content[lang].welcome;
+      document.getElementById("description").textContent = content[lang].description;
+      document.getElementById("link1").textContent = content[lang].link1;
+      document.getElementById("link2").textContent = content[lang].link2;
+      document.getElementById("link3").textContent = content[lang].link3;
+      document.getElementById("link4").textContent = content[lang].link4;
+    }
+  </script>
+
+</body>
+</html>
